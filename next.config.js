@@ -16,7 +16,8 @@ const nextConfig = withPWA({
     eslint: {
       ignoreDuringBuilds: true,
     },
-      distDir: 'dist',
+      distDir: 'out',
+      output: 'export'
   }),
 });
 module.exports = nextConfig;
