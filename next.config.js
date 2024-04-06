@@ -17,7 +17,9 @@ const nextConfig = withPWA({
       ignoreDuringBuilds: true,
     },
       distDir: 'out',
-      output: 'export'
+      output: 'export',
+      trailingSlash:true,
+      images:{unoptimized:true}
   }),
 });
 module.exports = nextConfig;
