@@ -18,8 +18,18 @@ const nextConfig = withPWA({
       ignoreDuringBuilds: true,
     },
       distDir: 'out',
+      output:'export',
       trailingSlash:true,
-      images:{unoptimized:true}
+      images:{unoptimized:true},
+      exportPathMap: async function (
+        defaultPathMap,
+        { dev, dir, outDir, distDir, buildId }
+      ) {
+        return {
+          '/': { page: '/' },
+          '/swap': { page: '/swap' },
+        }
+      },
   }),
 });
 module.exports = nextConfig;
