@@ -30,6 +30,7 @@ const nextConfig = withPWA({
           '/swap': { page: '/swap' },
         }
       },
+      output: 'standalone',
   }),
 });
 module.exports = nextConfig;
