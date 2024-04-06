@@ -25,10 +25,10 @@ export default function SelectWallet({ ...props }) {
       </p>
 
       <div
-        className="mt-12 flex h-14 w-full cursor-pointer items-center justify-between rounded-lg bg-gradient-to-l from-[#ffdc24] to-[#ff5c00] px-4 text-base text-white transition-all hover:-translate-y-0.5"
+        className="mt-12 flex h-14 w-full cursor-pointer items-center justify-between rounded-lg bg-gradient-to-l from-[#ffffff] to-[#35a6c4] px-4 text-base text-white transition-all hover:-translate-y-0.5"
         onClick={connectToWallet}
       >
-        <span>MetaMask</span>
+        <span>Albedo</span>
         <span className="h-auto w-9">
           <Image src={metamaskLogo} alt="metamask" />
         </span>
