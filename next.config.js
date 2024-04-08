@@ -17,20 +17,10 @@ const nextConfig = withPWA({
     eslint: {
       ignoreDuringBuilds: true,
     },
-      distDir: 'out',
+
       output:'export',
       trailingSlash:true,
-      images:{unoptimized:true},
-      exportPathMap: async function (
-        defaultPathMap,
-        { dev, dir, outDir, distDir, buildId }
-      ) {
-        return {
-          '/': { page: '/' },
-          '/swap': { page: '/swap' },
-        }
-      },
-      output: 'standalone',
+      images:{unoptimized:true}
   }),
 });
 module.exports = nextConfig;
