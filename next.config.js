@@ -1,4 +1,6 @@
 /** @type {import('next').NextConfig} */
+
+
 const runtimeCaching = require('next-pwa/cache');
 const withPWA = require('next-pwa')({
   dest: 'public',
@@ -8,14 +10,15 @@ const withPWA = require('next-pwa')({
 
 const nextConfig = withPWA({
   reactStrictMode: true,
-...(process.env.NODE_ENV === 'production' && {
+  ...(process.env.NODE_ENV === 'production' && {
     typescript: {
       ignoreBuildErrors: true,
     },
     eslint: {
       ignoreDuringBuilds: true,
     },
-     output:'export',
+      distDir:'out',
+      output:'export',
       trailingSlash:true,
       images:{unoptimized:true}
   }),
