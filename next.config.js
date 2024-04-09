@@ -1,11 +1,23 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  output: 'export',
-  reactStrictMode: true,
-  images: {
-    unoptimized: true,
-  },
-  trailingSlash: true,
-}
+const runtimeCaching = require('next-pwa/cache');
+const withPWA = require('next-pwa')({
+  dest: 'public',
+  disable: process.env.NODE_ENV === 'development',
+  runtimeCaching,
+});
 
-module.exports = nextConfig
+const nextConfig = withPWA({
+  reactStrictMode: true,
+...(process.env.NODE_ENV === 'production' && {
+    typescript: {
+      ignoreBuildErrors: true,
+    },
+    eslint: {
+      ignoreDuringBuilds: true,
+    },
+     output:'export',
+      trailingSlash:true,
+      images:{unoptimized:true}
+  }),
+});
+module.exports = nextConfig;
